@@ -21,3 +21,8 @@
   shell: |
     systemctl restart sockpit
     systemctl enable --now cockpit.socket 
+
+- name: Check cockpit Service
+  shell: systemctl status cockpit | grep Active*
+  register: check_cockpit_service
+  notify: check_cockpit_service
