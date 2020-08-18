@@ -1,4 +1,9 @@
+- name: Kafka
+  hosts: all
+  become: yes
+  become_method: sudo
 
+  
   roles:
     - {role: cockpit, tags: "cockpit"}
 
