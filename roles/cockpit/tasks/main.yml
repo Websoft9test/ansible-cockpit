@@ -1,7 +1,7 @@
 # install cockpit
 - name: Install cockpit
   apt: 
-    name: cocketpit
+    name: cockpit
     update_cache: yes
   when: ansible_os_family == "Debian"
 
