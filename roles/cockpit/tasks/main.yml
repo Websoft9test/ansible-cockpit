@@ -1,13 +1,13 @@
 # install cockpit
 - name: Install cockpit
   apt: 
-    name: cockpit
+    name: [cockpit*]
     update_cache: yes
   when: ansible_os_family == "Debian"
 
 - name: Install cockpit
   yum:
-    name: cockpit
+    name: [cockpit*]
     update_cache: yes    
   when: ansible_os_family == "RedHat"
 
