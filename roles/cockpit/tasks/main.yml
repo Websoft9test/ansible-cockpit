@@ -1,10 +1,23 @@
-#1 Prepare
-#2 Install
-#3 Configure
-#3 Verify
+# install cockpit
+- name: Install cockpit
+  apt: 
+    name: cocketpit
+    update_cache: yes
+  when: ansible_os_family == "Debian"
 
+- name: Install cockpit
+  yum:
+    name: cockpit
+    update_cache: yes    
+  when: ansible_os_family == "RedHat"
 
-# install Cockpit by OS_family
-- name: Install this role on {{ansible_os_family}}
-  include: "{{ansible_os_family}}.yml"
+# configure
+- name: Configuration Cockpit Server
+  copy:
+    src: cockpit.conf
+    dest: /etc/cockpit/
 
+- name: Start & Enable cockpit
+  shell: |
+    systemctl restart sockpit
+    systemctl enable --now cockpit.socket 
