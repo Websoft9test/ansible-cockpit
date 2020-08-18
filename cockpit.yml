@@ -2,8 +2,8 @@
   hosts: all
   become: yes
   become_method: sudo
-
-
+  vars_files:
+    - vars/main.yml
   roles:
     - {role: cockpit, tags: "cockpit"}
 
