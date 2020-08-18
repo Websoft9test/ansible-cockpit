@@ -1,17 +1,17 @@
 # Start or Stop the Services
 
-These commands you must know when you using the RabbitMQ of Websoft9
+These commands you must know when you using the Cockpit of Websoft9
 
-### RabbitMQ
+### Cockpit
 
 ```shell
-sudo systemctl start rabbitmq-server
-sudo systemctl stop rabbitmq-server
-sudo systemctl restart rabbitmq-server
-sudo systemctl status rabbitmq-server
+sudo systemctl start cockpit-server
+sudo systemctl stop cockpit-server
+sudo systemctl restart cockpit-server
+sudo systemctl status cockpit-server
 
-# you can use this debug mode if RabbitMQ service can't run
-rabbitmq-server console
+# you can use this debug mode if Cockpit service can't run
+cockpit-server console
 ```
 
 ### MySQL

@@ -1,0 +1,3 @@
+- name: check_cockpit_service
+  debug:
+    var: check_cockpit_service.stdout

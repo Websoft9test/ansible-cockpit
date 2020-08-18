@@ -9,8 +9,8 @@
 
 ### Bug Fixes
 
-* 2020-02-14  cockpit-version版本输出
-* 2020-02-13  cockpit-version版本输出
+* 2020-02-14  redis-version版本输出
+* 2020-02-13  redis-version版本输出
 
 ### Features
 

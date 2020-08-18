@@ -1,17 +1,17 @@
 # 服务启停
 
-使用由Websoft9提供的 RabbitMQ 部署方案，可能需要用到的服务如下：
+使用由Websoft9提供的 Cockpit 部署方案，可能需要用到的服务如下：
 
-### RabbitMQ
+### Cockpit
 
 ```shell
-sudo systemctl start rabbitmq-server
-sudo systemctl stop rabbitmq-server
-sudo systemctl restart rabbitmq-server
-sudo systemctl status rabbitmq-server
+sudo systemctl start cockpit-server
+sudo systemctl stop cockpit-server
+sudo systemctl restart cockpit-server
+sudo systemctl status cockpit-server
 
-# you can use this debug mode if RabbitMQ service can't run
-rabbitmq-server console
+# you can use this debug mode if Cockpit service can't run
+cockpit-server console
 ```
 
 ### MySQL

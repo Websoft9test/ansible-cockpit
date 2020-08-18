@@ -3,11 +3,11 @@ region: "0"
 
 common_os_support: ["CentOS", "Ubuntu", "Amazon", "OracleLinux"]
 
-# rabbitmq variable
+# cockpit variable
 
-rabbitmq_db_name: rabbitmq
-rabbitmq_db_user: rabbitmq
-rabbitmq_db_password: "123456"
+cockpit_db_name: cockpit
+cockpit_db_user: cockpit
+cockpit_db_password: "123456"
 
 preend_certbot: True
 nginx_reverse_proxy_port: "8065"
@@ -22,12 +22,12 @@ docker_applications: 'phpmyadmin'
 
 # add databases and users
 mysql_databases:
- - name: rabbitmq
+ - name: cockpit
  
 mysql_users:
- - name: rabbitmq
+ - name: cockpit
    host: localhost
-   priv: 'rabbitmq.*:ALL'
+   priv: 'cockpit.*:ALL'
 
 # init passsword of database
 init_db: 
@@ -37,11 +37,11 @@ init_db:
   
 # init password of applications
 init_application:
-  rabbitmq:
-    service: rabbitmq
-    database: rabbitmq 
-    database_user: rabbitmq
+  cockpit:
+    service: cockpit
+    database: cockpit 
+    database_user: cockpit
     database_host: localhost
     database_password: "123456"
     config_path:
-      - /opt/rabbitmq/config/config.json
+      - /opt/cockpit/config/config.json
