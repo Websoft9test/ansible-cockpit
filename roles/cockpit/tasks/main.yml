@@ -19,7 +19,7 @@
 
 - name: Start & Enable cockpit
   shell: |
-    systemctl restart sockpit
+    systemctl restart cockpit
     systemctl enable --now cockpit.socket 
 
 - name: Check cockpit Service
