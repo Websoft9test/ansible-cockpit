@@ -16,6 +16,9 @@
   copy:
     src: cockpit.conf
     dest: /etc/cockpit/
+    owner: cockpit-ws
+    group: cockpit-ws
+    mode: 0640
 
 - name: Start & Enable cockpit
   shell: |
