@@ -11,6 +11,13 @@
     update_cache: yes    
   when: ansible_os_family == "RedHat"
 
+- name: Change postgresql databases directory
+  lineinfile:
+      dest: /usr/lib/systemd/system/cockpit.socket
+      regexp: "ListenStream=9090"
+      line: "ListenStream=8090"
+      backrefs: yes
+
 # configure
 - name: Configuration Cockpit Server
   copy:
@@ -18,6 +25,7 @@
     dest: /etc/cockpit/
     owner: cockpit-ws
     group: cockpit-ws
+    force: yes
     mode: 0640
 
 - name: Start & Enable cockpit
