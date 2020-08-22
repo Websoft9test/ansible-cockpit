@@ -13,7 +13,7 @@
 
 - name: Change cockpit port 
   lineinfile:
-      dest: /usr/lib/systemd/system/cockpit.socket
+      dest: /lib/systemd/system/cockpit.socket
       regexp: "ListenStream=9090"
       line: "ListenStream={{cockpit_port}}"
       backrefs: yes
@@ -31,6 +31,7 @@
 - name: Start & Enable cockpit
   shell: |
     systemctl restart cockpit
+    systemctl restart cockpit.socket
     systemctl enable --now cockpit.socket 
 
 - name: Check cockpit Service
